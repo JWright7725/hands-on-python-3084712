@@ -23,8 +23,9 @@ for laureate in laureates:
         print("============")
         year_date = datetime.strptime(laureate["year"], "%Y")
         born_date = datetime.strptime(laureate["born"], "%Y-%m-%d")
+        prize_date = datetime.strptime("12-10", "%m-%d")
         if born_date.month < prize_date.month \
-        | (born_date.month == prize_date.month & born_date.day < prize_date.day):
+                | (born_date.month == prize_date.month & born_date.day < prize_date.day):
             print("age", year_date.year - born_date.year)
         else:
             print("age", year_date.year - born_date.year - 1)
